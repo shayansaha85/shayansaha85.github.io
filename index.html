@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio of Shayan Saha, Site Reliability Engineer">
+    <title>Shayan</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="assets/my_dp.png" type="image/x-icon">
+
+</head>
+<body>
+    
+    <nav class="navbar" id="navbar">
+        <div class="nav-content">
+            <a href="#" class="logo"><span id="typing-text"></span><span class="cursor">_</span></a>
+            
+            <div class="mobile-menu-btn" id="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="hero" id="home">
+        <div class="container hero-container fade-in">
+            <div class="hero-content">
+                <p class="greeting">Hello, world! I am</p>
+                <h1>Shayan Saha</h1>
+                <h2 class="role">Site Reliability Engineer</h2>
+                <p class="summary">
+                    Architecting & scaling Observability, AIOps, and DevOps solutions. <br>
+                    Bridging the gap between development and operations to build systems that are reliable, scalable, and self-healing.
+                </p>
+                <div class="cta-group">
+                    <a href="#projects" class="btn primary">View Projects</a>
+                    <a href="https://github.com/shayansaha85" target="_blank" class="btn secondary">
+                        <img src="assets/github.png" alt="" width="30" height="30">
+                        <!-- <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg> -->
+                        <!-- GitHub Profile -->
+                    </a>
+                </div>
+                <div class="hero-socials fade-in">
+                    <a href="https://linkedin.com/in/shayansaha85" target="_blank" title="LinkedIn" aria-label="LinkedIn">
+                        <img src="assets/linkedin.png" alt="LinkedIn" width="40" height="40">
+                    </a>
+                    <a href="https://x.com/shayansaha85" target="_blank" title="X" aria-label="X">
+                        <img src="assets/x.png" alt="X" width="40" height="40">
+                    </a>
+                    <a href="https://reddit.com/user/shayansaha85" target="_blank" title="Reddit" aria-label="Reddit">
+                        <img src="assets/reddit.png" alt="Reddit" width="40" height="40">
+                    </a>
+                    <a href="https://bsky.app/profile/shayandev.bsky.social" target="_blank" title="Bluesky" aria-label="Bluesky">
+                        <img src="assets/bluesky.png" alt="Bluesky" width="40" height="40">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="hero-decoration"></div>
+    </header>
+
+    <section id="about" class="section bg-alt">
+        <div class="container fade-in">
+            <h2 class="section-title">01. <span>About Me</span></h2>
+            <div class="about-grid">
+                <div class="about-text card">
+                    <p>Site Reliability Engineer with 5+ years of experience architecting and scaling Observability, AIOps, and DevOps solutions across distributed systems.</p>
+                    <p>Demonstrated ability to dramatically reduce operational downtime including a 93% reduction in incident-driven disruptions through intelligent automation and proactive monitoring strategies. Skilled in building robust Python-driven automation pipelines, integrating CI/CD workflows, and delivering end-to-end visibility across complex infrastructure.</p>
+                    
+                    <div class="contact-info">
+                        <div class="info-item">
+                            <span class="info-label">Email:</span>
+                            <a href="mailto:shayansaha.con@gmail.com">shayansaha.con@gmail.com / shayan851997@gmail.com</a>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Phone / WhatsApp:</span>
+                            <span>07980919179</span>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+                <div class="certifications card gradient-border">
+                    <h3>Certifications</h3>
+                    <ul class="cert-list">
+                        <li>
+                            <div class="cert-icon">🏆</div>
+                            <div class="cert-details">
+                                <h4>Full-Stack Observability Practitioner</h4>
+                                <span>New Relic</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="cert-icon">⚙️</div>
+                            <div class="cert-details">
+                                <h4>Chaos Engineering Professional & Practitioner</h4>
+                                <span>Gremlin</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="section">
+        <div class="container fade-in">
+            <h2 class="section-title">02. <span>Technical Arsenal</span></h2>
+            <div class="skills-grid">
+                <div class="skill-category card">
+                    <h3>Languages & Frameworks</h3>
+                    <div class="badges">
+                        <span class="badge">Python</span>
+                        <span class="badge">JavaScript</span>
+                        <span class="badge">Golang (Learning)</span>
+                        <span class="badge">Flask</span>
+                        <span class="badge">FastAPI</span>
+                        <span class="badge">Selenium</span>
+                        <span class="badge">Playwright</span>
+                    </div>
+                </div>
+                <div class="skill-category card">
+                    <h3>DevOps & Observability</h3>
+                    <div class="badges">
+                        <span class="badge">New Relic</span>
+                        <span class="badge">Datadog</span>
+                        <span class="badge">Zabbix</span>
+                        <span class="badge">Thousand Eyes</span>
+                        <span class="badge">Grafana</span>
+                        <span class="badge">Prometheus</span>
+                        <span class="badge">Jenkins</span>
+                        <span class="badge">GitHub Actions</span>
+                        <span class="badge">GitLab CI/CD</span>
+                        <span class="badge">Docker</span>
+                        <span class="badge">Terraform</span>
+                        <span class="badge">Ansible</span>
+                        <span class="badge">Gremlin</span>
+                        <span class="badge">Chaos Toolkit</span>
+                    </div>
+                </div>
+                <div class="skill-category card">
+                    <h3>Databases & Tools</h3>
+                    <div class="badges">
+                        <span class="badge">MySQL</span>
+                        <span class="badge">SQLite</span>
+                        <span class="badge">MongoDB</span>
+                        <span class="badge">PostgreSQL</span>
+                        <span class="badge">LoadRunner</span>
+                        <span class="badge">JMeter</span>
+                        <span class="badge">Linux / Unix</span>
+                        <span class="badge">Git</span>
+                        <span class="badge">Jira</span>
+                        <span class="badge">Confluence</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="section bg-alt">
+        <div class="container fade-in">
+            <h2 class="section-title">03. <span>Professional Experience</span></h2>
+            <div class="timeline">
+                
+                <div class="timeline-item card">
+                    <div class="timeline-date">Aug 2024 - Present</div>
+                    <div class="timeline-content">
+                        <h3>Software Engineer (SRE)</h3>
+                        <h4>Tata Consultancy Services</h4>
+                        <ul>
+                            <li>Implemented end-to-end observability solutions for 96 applications using New Relic.</li>
+                            <li>Automated monitoring setup across 90% of infrastructure, improving scalability and consistency.</li>
+                            <li>Developed 150+ automated synthetic test scripts, reducing downtime by 90%.</li>
+                            <li>Built Python-based automation tools reducing manual effort by 95%.</li>
+                            <li>Created API monitoring and validation automation pipelines.</li>
+                            <li>Automated infra-level chaos engineering experiments across Linux, AIX, and Windows systems.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item card">
+                    <div class="timeline-date">Sep 2020 - Jul 2024</div>
+                    <div class="timeline-content">
+                        <h3>Analyst Programmer</h3>
+                        <h4>Wipro Technologies</h4>
+                        <ul>
+                            <li>Implemented observability for 150+ applications, reducing downtime by 93%.</li>
+                            <li>Automated monitoring setup across 2000+ hosts.</li>
+                            <li>Developed 300+ synthetic automation scripts for real-user simulation.</li>
+                            <li>Automated API testing workflows using Python.</li>
+                            <li>Led automated load and stress testing using JMeter & LoadRunner, improving stability by 40%.</li>
+                            <li>Built automation frameworks for testing, reporting, and analysis.</li>
+                            <li>Integrated testing and monitoring into CI/CD pipelines (Jenkins).</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="section">
+        <div class="container fade-in">
+            <h2 class="section-title">04. <span>Signature Projects</span></h2>
+            <div class="projects-grid signature-projects">
+                
+                <!-- Signature Project 1: Orcafile -->
+                <div class="project-card card signature-card">
+                    <div class="project-header">
+                        <div class="folder-icon">
+                            <img src="https://raw.githubusercontent.com/shayansaha85/orcafile/master/orcafile_logo.ico" alt="Orcafile Logo" width="40" height="40" class="project-logo">
+                        </div>
+                        <div class="project-links" style="display: flex; gap: 1rem;">
+                            <a href="#" target="_blank" class="github-link" aria-label="Website Link" title="Website">
+                                <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                            </a>
+                            <a href="https://github.com/shayansaha85/orcafile" target="_blank" class="github-link" aria-label="GitHub Link" title="GitHub Repo">
+                                <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                            </a>
+                        </div>
+                    </div>
+                    <h3>Orcafile</h3>
+                    <p>Cross-platform desktop application that scans and organizes files by extension using a multi-threaded indexing engine, providing intuitive large file and storage consumption analysis.</p>
+                    <ul class="project-tech">
+                        <li>Python</li>
+                        <li>PyQt6</li>
+                        <li>Multi-threading</li>
+                        <li>File System Analysis</li>
+                    </ul>
+                </div>
+
+                <!-- Signature Project 2: Cronfrog -->
+                <div class="project-card card signature-card">
+                    <div class="project-header">
+                        <div class="folder-icon">
+                            <img src="https://raw.githubusercontent.com/shayansaha85/cronfrog/master/docs/cronfrog_logo.png" alt="Cronfrog Logo" width="40" height="40" class="project-logo">
+                        </div>
+                        <div class="project-links" style="display: flex; gap: 1rem;">
+                            <a href="#" target="_blank" class="github-link" aria-label="Website Link" title="Website">
+                                <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                            </a>
+                            <a href="https://github.com/shayansaha85/cronfrog" target="_blank" class="github-link" aria-label="GitHub Link" title="GitHub Repo">
+                                <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                            </a>
+                        </div>
+                    </div>
+                    <h3>Cronfrog</h3>
+                    <p>Self-hosted job scheduling platform integrated with APScheduler. Features a FastAPI backend providing REST APIs for robust cron-based and interval-based job management.</p>
+                    <ul class="project-tech">
+                        <li>Python</li>
+                        <li>FastAPI</li>
+                        <li>APScheduler</li>
+                        <li>REST API</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h2 class="section-title mt-4" style="margin-top: 5rem;"><span>Other Featured Projects</span></h2>
+            <div class="projects-grid">
+                
+                <!-- Project 1 -->
+                <div class="project-card card">
+                    <div class="project-header">
+                        <div class="folder-icon">
+                            <svg viewBox="0 0 24 24" width="32" height="32" stroke="var(--accent-1)" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+                        </div>
+                        <a href="https://github.com/shayansaha85/HammerAPI" target="_blank" class="github-link" aria-label="GitHub Link">
+                            <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                        </a>
+                    </div>
+                    <h3>HammerAPI</h3>
+                    <p>A lightweight, multi-threaded Python library for API performance and load testing. Features real-time system impact analysis (CPU & RAM) and interactive HTML report generation.</p>
+                    <ul class="project-tech">
+                        <li>Python</li>
+                        <li>Multi-threading</li>
+                        <li>REST APIs</li>
+                        <li>HTML Reporting</li>
+                    </ul>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card card">
+                    <div class="project-header">
+                        <div class="folder-icon">
+                            <svg viewBox="0 0 24 24" width="32" height="32" stroke="var(--accent-1)" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+                        </div>
+                        <a href="https://github.com/shayansaha85/Foring" target="_blank" class="github-link" aria-label="GitHub Link">
+                            <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                        </a>
+                    </div>
+                    <h3>Foring</h3>
+                    <p>Lightweight Python utility library simplifying file I/O with smart `read()` and `write()` functions. Features auto-detection of file extensions to eliminate complex serialization handling.</p>
+                    <ul class="project-tech">
+                        <li>Python</li>
+                        <li>File I/O</li>
+                        <li>Serialization</li>
+                    </ul>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="project-card card">
+                    <div class="project-header">
+                        <div class="folder-icon">
+                            <svg viewBox="0 0 24 24" width="32" height="32" stroke="var(--accent-1)" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+                        </div>
+                        <a href="https://github.com/shayansaha85/Seesys" target="_blank" class="github-link" aria-label="GitHub Link">
+                            <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                        </a>
+                    </div>
+                    <h3>Seesys</h3>
+                    <p>Terminal-based real-time infrastructure monitoring tool for headless environments. Diagnoses performance bottlenecks using a rich terminal interface for CPU, RAM, disk, and network visibility.</p>
+                    <ul class="project-tech">
+                        <li>Python</li>
+                        <li>Rich</li>
+                        <li>psutil</li>
+                        <li>System Monitoring</li>
+                    </ul>
+                </div>
+
+                <!-- Project 7 -->
+                <div class="project-card card">
+                    <div class="project-header">
+                        <div class="folder-icon">
+                            <svg viewBox="0 0 24 24" width="32" height="32" stroke="var(--accent-1)" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+                        </div>
+                        <a href="https://github.com/shayansaha85/chaos-gen-ai-implementation" target="_blank" class="github-link" aria-label="GitHub Link">
+                            <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                        </a>
+                    </div>
+                    <h3>Chaos + GenAI</h3>
+                    <p>MongoDB Chaos Intelligence Platform. Bridges traditional chaos engineering with Generative AI (GPT-3.5-turbo) to execute experiments and generate intelligent insights and root cause summaries.</p>
+                    <ul class="project-tech">
+                        <li>Python</li>
+                        <li>MongoDB</li>
+                        <li>OpenAI GPT-3.5-turbo</li>
+                    </ul>
+                </div>
+
+                <!-- Project 8 -->
+                <div class="project-card card">
+                    <div class="project-header">
+                        <div class="folder-icon">
+                            <svg viewBox="0 0 24 24" width="32" height="32" stroke="var(--accent-1)" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+                        </div>
+                        <a href="https://github.com/shayansaha85/inhouse-infra-chaos-studio" target="_blank" class="github-link" aria-label="GitHub Link">
+                            <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                        </a>
+                    </div>
+                    <h3>OS Chaos Studio</h3>
+                    <p>UI-based chaos testing tool executing infra-level experiments on remote servers via SSH. Supports CPU, memory, disk, and network latency chaos for comprehensive infrastructure stress testing.</p>
+                    <ul class="project-tech">
+                        <li>Python</li>
+                        <li>OpenSSH</li>
+                        <li>stress-ng</li>
+                    </ul>
+                </div>
+
+            </div>
+            
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-socials">
+                <a href="https://github.com/shayansaha85" target="_blank" title="GitHub" aria-label="GitHub">
+                    <img src="assets/github.png" alt="GitHub" width="28" height="28" style="border-radius: 4px;">
+                </a>
+                <a href="https://linkedin.com/in/shayansaha85" target="_blank" title="LinkedIn" aria-label="LinkedIn">
+                    <img src="assets/linkedin.png" alt="LinkedIn" width="28" height="28" style="border-radius: 4px;">
+                </a>
+                <a href="https://x.com/shayansaha85" target="_blank" title="X" aria-label="X">
+                    <img src="assets/x.png" alt="X" width="28" height="28" style="border-radius: 4px;">
+                </a>
+                <a href="https://reddit.com/user/shayansaha85" target="_blank" title="Reddit" aria-label="Reddit">
+                    <img src="assets/reddit.png" alt="Reddit" width="28" height="28" style="border-radius: 4px;">
+                </a>
+                <a href="https://bsky.app/profile/shayandev.bsky.social" target="_blank" title="Bluesky" aria-label="Bluesky">
+                    <img src="assets/bluesky.png" alt="Bluesky" width="28" height="28" style="border-radius: 4px;">
+                </a>
+                
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
