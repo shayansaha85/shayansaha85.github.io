@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Blog by Shayan Saha, Site Reliability Engineer">
+    <title>Blog - Shayan</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="assets/my_dp.png" type="image/x-icon">
+    <style>
+        .blog-header {
+            padding-top: 10rem;
+            padding-bottom: 4rem;
+            text-align: center;
+        }
+        .blog-header h1 {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            margin-bottom: 1rem;
+        }
+        .blog-header p {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-bottom: 6rem;
+        }
+        .blog-card {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        .blog-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+        }
+        .blog-card p {
+            flex-grow: 1;
+        }
+        .blog-date {
+            font-family: var(--font-mono);
+            font-size: 0.9rem;
+            color: var(--accent-1);
+            margin-bottom: 0.8rem;
+        }
+        .blog-read-more {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--accent-1);
+            font-weight: 600;
+            text-decoration: none;
+            margin-top: 1.5rem;
+            transition: var(--transition-standard);
+        }
+        .blog-read-more:hover {
+            gap: 0.8rem;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="rain-left" class="coding-rain"></canvas>
+    <canvas id="rain-right" class="coding-rain"></canvas>
+    
+    <nav class="navbar" id="navbar">
+        <div class="nav-content">
+            <a href="index.html" class="logo"><span id="typing-text"></span><span class="cursor">_</span></a>
+            
+            <div class="mobile-menu-btn" id="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#skills">Skills</a></li>
+                <li><a href="index.html#experience">Experience</a></li>
+                <li><a href="index.html#projects">Projects</a></li>
+                <li><a href="blog.html" style="color: var(--accent-1);">Blog</a></li>
+                <li>
+                    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Theme">
+                        <svg class="sun-icon" viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" style="display: none;"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                        <svg class="moon-icon" viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="blog-header container fade-in">
+        <h1>Blog</h1>
+        <p>Insights, tutorials, and stories on Site Reliability Engineering, DevOps, and more.</p>
+    </header>
+
+    <section class="container fade-in">
+        <div class="blog-grid">
+            <!-- Example Blog Post -->
+            <div class="card blog-card">
+                <div class="blog-date">July 9, 2026</div>
+                <h3>The Evolution of Site Reliability Engineering</h3>
+                <p>Exploring how SRE has transitioned from reactive system administration to proactive chaos engineering and AIOps.</p>
+                <a href="blogs/blog-1.html" class="blog-read-more">Read Article <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
+            </div>
+            
+            <!-- Add more blog cards here as you write them -->
+        </div>
+    </section>
+
+    <footer>
+        <div class="container" style="display: flex; flex-direction: column; align-items: center; gap: 2rem;">
+            <a href="https://tally.so/r/5B50Kb" target="_blank" rel="noopener noreferrer" class="nav-contact-btn" style="width: 140px; height: 44px; font-size: 1rem;">
+                <span class="btn-text">Send a note</span>
+                <span class="btn-icon">
+                    <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg>
+                </span>
+            </a>
+            <div class="footer-socials">
+                <a href="https://github.com/shayansaha85" target="_blank" title="GitHub" aria-label="GitHub">
+                    <img src="assets/github.png" alt="GitHub" width="28" height="28" style="border-radius: 4px;">
+                </a>
+                <a href="https://linkedin.com/in/shayansaha85" target="_blank" title="LinkedIn" aria-label="LinkedIn">
+                    <img src="assets/linkedin.png" alt="LinkedIn" width="28" height="28" style="border-radius: 4px;">
+                </a>
+                <a href="https://x.com/shayansaha85" target="_blank" title="X" aria-label="X">
+                    <img src="assets/x.png" alt="X" width="28" height="28" style="border-radius: 4px;">
+                </a>
+                <a href="https://reddit.com/user/shayansaha85" target="_blank" title="Reddit" aria-label="Reddit">
+                    <img src="assets/reddit.png" alt="Reddit" width="28" height="28" style="border-radius: 4px;">
+                </a>
+                <a href="https://bsky.app/profile/shayandev.bsky.social" target="_blank" title="Bluesky" aria-label="Bluesky">
+                    <img src="assets/bluesky.png" alt="Bluesky" width="28" height="28" style="border-radius: 4px;">
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

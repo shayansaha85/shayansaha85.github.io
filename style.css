@@ -327,6 +327,59 @@ p {
     background: var(--accent-1-light);
 }
 
+.nav-contact-btn {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 120px;
+    height: 36px;
+    border-radius: 20px;
+    background: var(--accent-gradient);
+    color: white;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(37, 99, 235, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.nav-links a.nav-contact-btn {
+    color: white;
+}
+
+.nav-links a.nav-contact-btn:hover {
+    color: white;
+}
+
+.nav-contact-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(139, 92, 246, 0.4);
+}
+
+.nav-contact-btn .btn-text {
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
+    position: absolute;
+}
+
+.nav-contact-btn .btn-icon {
+    position: absolute;
+    transform: translateY(20px);
+    opacity: 0;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
+}
+
+.nav-contact-btn:hover .btn-text {
+    transform: translateY(-20px);
+    opacity: 0;
+}
+
+.nav-contact-btn:hover .btn-icon {
+    transform: translateY(0);
+    opacity: 1;
+}
+
 /* Sections Global */
 .section {
     padding: 6rem 0;
