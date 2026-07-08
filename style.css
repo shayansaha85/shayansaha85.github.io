@@ -479,6 +479,60 @@ p {
     border-color: rgba(37, 99, 235, 0.3);
 }
 
+/* Skills Carousel */
+.skills-carousel-container {
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    width: 100%;
+    padding: 1rem 0;
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+.skills-carousel-track {
+    display: inline-flex;
+    gap: 4rem;
+    align-items: center;
+    width: max-content;
+    animation: scroll-carousel 45s linear infinite;
+}
+
+.skills-carousel-track:hover {
+    animation-play-state: paused;
+}
+
+.skills-carousel-track img {
+    height: 45px;
+    width: auto;
+    object-fit: contain;
+    filter: grayscale(100%) opacity(0.6);
+    transition: filter 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+}
+
+.skills-carousel-track img:hover {
+    filter: grayscale(0%) opacity(1);
+    transform: scale(1.15);
+}
+
+[data-theme="dark"] .skills-carousel-track img {
+    filter: grayscale(100%) brightness(1.5) opacity(0.6);
+}
+
+[data-theme="dark"] .skills-carousel-track img:hover {
+    filter: grayscale(0%) brightness(1) opacity(1);
+}
+
+@keyframes scroll-carousel {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-50% - 2rem));
+    }
+}
+
 /* Experience */
 .timeline {
     position: relative;
