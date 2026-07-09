@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Synergizing Generative AI and Chaos Engineering for Resilient Systems - Blog by Shayan Saha">
+    <title>GenAI & Chaos Engineering - Shayan</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="icon" href="../assets/my_dp.png" type="image/x-icon">
+    <style>
+        .article-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 8rem 2rem 6rem;
+        }
+        .article-header {
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+        .article-header h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+        .article-meta {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            color: var(--text-muted);
+            font-family: var(--font-mono);
+            font-size: 0.95rem;
+        }
+        .article-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+        }
+        .article-content p {
+            margin-bottom: 1.5rem;
+            color: var(--text-secondary);
+        }
+        .article-content h2 {
+            font-size: 1.8rem;
+            color: var(--text-primary);
+            margin-top: 3rem;
+            margin-bottom: 1rem;
+        }
+        .article-content h3 {
+            font-size: 1.4rem;
+            color: var(--text-primary);
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+        .article-content ul {
+            margin-bottom: 1.5rem;
+            padding-left: 1.5rem;
+            color: var(--text-secondary);
+        }
+        .article-content li {
+            margin-bottom: 0.5rem;
+        }
+        .article-content img {
+            width: 100%;
+            height: auto;
+            aspect-ratio: 21 / 9;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 12px;
+            margin: 2rem 0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-muted);
+            text-decoration: none;
+            margin-bottom: 2rem;
+            font-weight: 500;
+            transition: var(--transition-standard);
+        }
+        .back-link:hover {
+            color: var(--accent-1);
+            transform: translateX(-5px);
+        }
+    </style>
+</head>
+<body>
+    <canvas id="rain-left" class="coding-rain"></canvas>
+    <canvas id="rain-right" class="coding-rain"></canvas>
+    
+    <nav class="navbar" id="navbar">
+        <div class="nav-content">
+            <a href="../index.html" class="logo"><span id="typing-text"></span><span class="cursor">_</span></a>
+            
+            <div class="mobile-menu-btn" id="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <ul class="nav-links" id="nav-links">
+                <li><a href="../index.html#about">About</a></li>
+                <li><a href="../index.html#skills">Skills</a></li>
+                <li><a href="../index.html#experience">Experience</a></li>
+                <li><a href="../index.html#projects">Projects</a></li>
+                <li><a href="../blog.html" style="color: var(--accent-1);">Blog</a></li>
+                <li>
+                    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Theme">
+                        <svg class="sun-icon" viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" style="display: none;"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                        <svg class="moon-icon" viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <article class="article-container fade-in">
+        <a href="../blog.html" class="back-link">
+            <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+            Back to Blog
+        </a>
+        
+        <header class="article-header">
+            <h1>Synergizing Generative AI and Chaos Engineering</h1>
+            <div class="article-meta">
+                <span>July 9, 2026</span>
+                <span>•</span>
+                <span>4 min read</span>
+            </div>
+        </header>
+
+        <div class="article-content">
+            <img src="../assets/ai_chaos_synergy.png" alt="Synergy of AI and Chaos Engineering">
+            
+            <p>In the rapidly evolving landscape of technology, two significant trends are reshaping the way we think about system robustness and intelligence: Generative AI (GenAI) and Chaos Engineering. These two fields, though distinct in their primary objectives, share a common goal – enhancing the resilience and functionality of complex systems. By understanding and integrating principles from both, organizations can build systems that are not only intelligent but also highly resilient to disruptions.</p>
+
+            <h2>Generative AI: The Frontier of Intelligent Systems</h2>
+            <p>Generative AI, or GenAI, refers to artificial intelligence systems that can generate new content, such as text, images, or even software code, by learning patterns from existing data. This subset of AI has shown remarkable capabilities in creating human-like text (think GPT-4), designing novel proteins, and producing realistic art. The core of GenAI lies in its ability to learn from vast amounts of data and generate outputs that are creative and contextually relevant.</p>
+
+            <h3>Applications of GenAI</h3>
+            <ul>
+                <li><strong>Content Creation:</strong> Automating the generation of articles, reports, and marketing content.</li>
+                <li><strong>Design and Art:</strong> Assisting in creating artwork, graphic designs, and even architectural plans.</li>
+                <li><strong>Software Development:</strong> Writing code snippets or entire programs based on given specifications.</li>
+                <li><strong>Healthcare:</strong> Designing new drugs and treatment plans by simulating molecular structures.</li>
+            </ul>
+
+            <p>However, the power of GenAI also brings challenges, particularly in ensuring the accuracy and reliability of its outputs. This is where the principles of Chaos Engineering can play a pivotal role.</p>
+
+            <h2>Chaos Engineering: Ensuring System Resilience</h2>
+            <p>Chaos Engineering is the practice of intentionally introducing faults into a system to understand its behavior under adverse conditions. Originally developed at Netflix, this approach aims to proactively identify weaknesses before they manifest in real-world outages. By "breaking things on purpose," engineers can build systems that are more robust and resilient.</p>
+
+            <h3>Key Principles of Chaos Engineering</h3>
+            <ul>
+                <li><strong>Hypothesis Testing:</strong> Formulating hypotheses about how the system should behave under certain conditions and then testing them.</li>
+                <li><strong>Fault Injection:</strong> Introducing controlled failures, such as network latency or server crashes, to observe system responses.</li>
+                <li><strong>Monitoring and Observability:</strong> Continuously monitoring system performance to detect anomalies and understand system behavior.</li>
+                <li><strong>Iterative Improvement:</strong> Using insights gained from chaos experiments to make systematic improvements to the system.</li>
+            </ul>
+
+            <h2>The Synergy of GenAI and Chaos Engineering</h2>
+            <p>Integrating GenAI with Chaos Engineering can significantly enhance the development of intelligent systems. Here’s how:</p>
+
+            <ul>
+                <li><strong>Stress-Testing AI Models:</strong> Chaos Engineering can be used to test the robustness of AI models. For instance, introducing data anomalies or simulating hardware failures can help understand how AI models cope with imperfect conditions.</li>
+                <li><strong>Improving Model Robustness:</strong> Insights from chaos experiments can inform the design of more resilient AI models. For example, if an AI model fails under certain conditions, engineers can refine the model to handle such scenarios better.</li>
+                <li><strong>Enhancing Automated Decision-Making:</strong> GenAI systems that assist in decision-making can be tested for reliability under stress, ensuring they provide accurate and dependable recommendations even in chaotic environments.</li>
+                <li><strong>Building Self-Healing Systems:</strong> Combining GenAI’s predictive capabilities with chaos engineering practices can lead to the development of self-healing systems that can anticipate and automatically recover from disruptions.</li>
+            </ul>
+
+            <p>The convergence of Generative AI and Chaos Engineering presents a powerful paradigm for building next-generation systems. By leveraging the creative potential of GenAI and the resilience-focused approach of Chaos Engineering, organizations can develop systems that are not only intelligent but also exceptionally robust. As we continue to push the boundaries of what technology can achieve, embracing these interdisciplinary practices will be crucial in navigating the complexities of modern digital ecosystems.</p>
+        </div>
+    </article>
+
+    <footer>
+        <div class="container" style="display: flex; flex-direction: column; align-items: center; gap: 2rem;">
+            <a href="https://tally.so/r/5B50Kb" target="_blank" rel="noopener noreferrer" class="nav-contact-btn" style="width: 140px; height: 44px; font-size: 1rem;">
+                <span class="btn-text">Send a note</span>
+                <span class="btn-icon">
+                    <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg>
+                </span>
+            </a>
+            <div class="footer-socials">
+                <a href="https://github.com/shayansaha85" target="_blank" title="GitHub" aria-label="GitHub">
+                    <img src="../assets/github.png" alt="GitHub" width="28" height="28" style="border-radius: 4px;">
+                </a>
+                <a href="https://linkedin.com/in/shayansaha85" target="_blank" title="LinkedIn" aria-label="LinkedIn">
+                    <img src="../assets/linkedin.png" alt="LinkedIn" width="28" height="28" style="border-radius: 4px;">
+                </a>
+                <a href="https://x.com/shayansaha85" target="_blank" title="X" aria-label="X">
+                    <img src="../assets/x.png" alt="X" width="28" height="28" style="border-radius: 4px;">
+                </a>
+                <a href="https://reddit.com/user/shayansaha85" target="_blank" title="Reddit" aria-label="Reddit">
+                    <img src="../assets/reddit.png" alt="Reddit" width="28" height="28" style="border-radius: 4px;">
+                </a>
+                <a href="https://bsky.app/profile/shayandev.bsky.social" target="_blank" title="Bluesky" aria-label="Bluesky">
+                    <img src="../assets/bluesky.png" alt="Bluesky" width="28" height="28" style="border-radius: 4px;">
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+</html>
