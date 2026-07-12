@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Turn a Laptop into an On-Premises Server - Blog by Shayan Saha">
+    <title>Laptop to On-Prem Server - Shayan</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="icon" href="../assets/my_dp.png" type="image/x-icon">
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+        const isDark = document.documentElement.getAttribute('data-theme') === 'dark' || 
+                       (localStorage.getItem('theme') === 'dark') ||
+                       (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches);
+        mermaid.initialize({ 
+            startOnLoad: true, 
+            theme: isDark ? 'dark' : 'default',
+            fontFamily: 'Inter, sans-serif'
+        });
+    </script>
+    <style>
+        .article-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 8rem 2rem 6rem;
+        }
+        .article-header {
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+        .article-header h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+        .article-meta {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            color: var(--text-muted);
+            font-family: var(--font-mono);
+            font-size: 0.95rem;
+        }
+        .article-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+        }
+        .article-content p {
+            margin-bottom: 1.5rem;
+            color: var(--text-secondary);
+        }
+        .article-content h2 {
+            font-size: 1.8rem;
+            color: var(--text-primary);
+            margin-top: 3rem;
+            margin-bottom: 1rem;
+        }
+        .article-content h3 {
+            font-size: 1.4rem;
+            color: var(--text-primary);
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+        .article-content ul {
+            margin-bottom: 1.5rem;
+            padding-left: 2rem;
+        }
+        .article-content li {
+            margin-bottom: 0.5rem;
+        }
+        .article-content pre {
+            background-color: #1e1e1e;
+            color: #d4d4d4;
+            padding: 1rem;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin-bottom: 1.5rem;
+            font-family: var(--font-mono);
+            font-size: 0.95rem;
+        }
+        .article-content code {
+            font-family: var(--font-mono);
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+            font-size: 0.9em;
+        }
+        .article-content pre code {
+            background-color: transparent;
+            padding: 0;
+        }
+        .article-content hr {
+            border: 0;
+            border-top: 1px solid var(--text-muted);
+            margin: 2rem 0;
+            opacity: 0.3;
+        }
+        .article-content img {
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            margin: 2rem 0;
+            box-shadow: var(--shadow-lg);
+        }
+        .mermaid {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            display: flex;
+            justify-content: center;
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-muted);
+            text-decoration: none;
+            margin-bottom: 2rem;
+            font-weight: 500;
+            transition: var(--transition-standard);
+        }
+        .back-link:hover {
+            color: var(--accent-1);
+            transform: translateX(-5px);
+        }
+    </style>
+</head>
+<body>
+    <canvas id="rain-left" class="coding-rain"></canvas>
+    <canvas id="rain-right" class="coding-rain"></canvas>
+    
+    <nav class="navbar" id="navbar">
+        <div class="nav-content">
+            <a href="../index.html" class="logo"><span id="typing-text"></span><span class="cursor">_</span></a>
+            
+            <div class="mobile-menu-btn" id="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <ul class="nav-links" id="nav-links">
+                <li><a href="../index.html#about">About</a></li>
+                <li><a href="../index.html#skills">Skills</a></li>
+                <li><a href="../index.html#experience">Experience</a></li>
+                <li><a href="../index.html#projects">Projects</a></li>
+                <li><a href="../blog.html" style="color: var(--accent-1);">Blog</a></li>
+                <li>
+                    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Theme">
+                        <svg class="sun-icon" viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" style="display: none;"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                        <svg class="moon-icon" viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <article class="article-container">
+        <a href="../blog.html" class="back-link">
+            <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+            Back to Blog
+        </a>
+        
+        <header class="article-header">
+            <h1>Turn a Laptop into an On-Premises Server</h1>
+            <div class="article-meta">
+                <span>July 12, 2026</span>
+                <span>•</span>
+                <span>6 min read</span>
+            </div>
+        </header>
+
+        <div class="article-content">
+            <img src="../assets/laptop_homelab.png" alt="A sleek laptop acting as a home server with glowing ethernet cables" style="aspect-ratio: 16/9; object-fit: cover;">
+            
+            <p>I frequently get asked by developers and tech enthusiasts if they can repurpose an old, dust-gathering laptop into a functional on-premises server. The answer? Absolutely. In fact, it's one of the best ways to build a homelab, run personal projects, or even support a small business without investing in expensive enterprise hardware.</p>
+            <p>Laptops come with built-in UPS (the battery!), they're extremely power-efficient, and they usually have more than enough computing power for most self-hosting needs. Here is my comprehensive guide to taking that old laptop and turning it into a robust, internet-accessible server.</p>
+            
+            <h2>High-Level Architecture</h2>
+            <p>Before we dive into the commands, let's visualize what we are trying to build. We want traffic from the internet to securely reach your laptop sitting at home.</p>
+            
+            <div class="mermaid">
+            flowchart TD
+                A[Internet] -->|Public IP Address| B[ISP Router/Modem]
+                B -->|Port Forwarding 80,443| C[Laptop On-Prem Server]
+                C -->|Ubuntu Server| D[Nginx / Apache / Caddy]
+                D --> E[Your Website / Applications]
+            </div>
+            
+            <hr>
+
+            <h2>Step 1: Choose the Operating System</h2>
+            <p>While you could run Windows, a Linux distribution is far superior for a headless server environment. I strongly recommend wiping the laptop and installing one of these:</p>
+            <ul>
+                <li><strong>Ubuntu Server 24.04 LTS (My top pick)</strong></li>
+                <li>Debian 12</li>
+                <li>Rocky Linux</li>
+            </ul>
+            <p>Ubuntu Server is my go-to recommendation due to its extensive documentation, massive community support, and straightforward package management.</p>
+            <hr>
+
+            <h2>Step 2: Give the Laptop a Static IP</h2>
+            <p>Servers need stable addresses. If your laptop's IP changes every time the router reboots, your port forwarding rules will break. Do <strong>not</strong> rely on DHCP.</p>
+            <p>You can configure a static IP via your router's interface (DHCP reservation) or directly within Ubuntu (using Netplan). I prefer doing it on the router to keep network management centralized.</p>
+            
+<pre><code># Example Configuration
+Laptop IP: 192.168.1.100
+Gateway: 192.168.1.1
+DNS: 1.1.1.1, 8.8.8.8</code></pre>
+            <hr>
+
+            <h2>Step 3: Install a Web Server</h2>
+            <p>You need software to handle HTTP/HTTPS requests. Popular choices include Nginx, Apache, and Caddy. For performance and reverse-proxy capabilities, Nginx is fantastic.</p>
+<pre><code class="language-bash">sudo apt update
+sudo apt install nginx</code></pre>
+            <p>Navigate to <code>http://192.168.1.100</code> on another device in your house, and you should be greeted by the classic "Welcome to nginx!" screen.</p>
+            <hr>
+
+            <h2>Step 4: Configure Firewall</h2>
+            <p>Security is paramount. We only want to expose the necessary ports. Ubuntu's Uncomplicated Firewall (UFW) makes this easy:</p>
+<pre><code class="language-bash">sudo ufw allow 80   # HTTP
+sudo ufw allow 443  # HTTPS
+sudo ufw allow 22   # SSH
+sudo ufw enable</code></pre>
+            <hr>
+
+            <h2>Step 5: Make It Reachable from the Internet</h2>
+            <p>This is where the magic happens—bridging your local network to the world wide web.</p>
+            
+            <h3>Option A (Best): Public Static IP</h3>
+            <p>If you can, ask your ISP for a Static Public IP. This guarantees your home network is always reachable at the same address (e.g., <code>203.25.xx.xx</code>).</p>
+            
+            <h3>Option B: Dynamic Public IP</h3>
+            <p>Most residential connections have dynamic IPs that change periodically. You can solve this using a Dynamic DNS (DDNS) service like DuckDNS, No-IP, or Cloudflare's DDNS scripts. Your router or a small script on your laptop will continuously ping the DDNS provider to update your current IP address behind a domain name (e.g., <code>myserver.duckdns.org</code>).</p>
+            <hr>
+
+            <h2>Step 6: Configure Port Forwarding</h2>
+            <p>Log into your router and forward incoming web traffic to your laptop's internal IP address.</p>
+            <ul>
+                <li>External Port 80 &rarr; Internal Port 80 (IP 192.168.1.100)</li>
+                <li>External Port 443 &rarr; Internal Port 443 (IP 192.168.1.100)</li>
+            </ul>
+            <hr>
+
+            <h2>Step 7: Enable HTTPS and Domains</h2>
+            <p>Don't serve traffic over plain HTTP. Buy a cheap domain name and point its A-record to your Public IP address. Then, secure it with a free SSL certificate from Let's Encrypt using Certbot.</p>
+<pre><code class="language-bash">sudo apt install certbot python3-certbot-nginx
+sudo certbot --nginx</code></pre>
+            <hr>
+
+            <h2>Step 8: Reverse Proxying Multiple Apps</h2>
+            <p>Once you start homelabbing, you won't stop at one app. You can use Nginx as a reverse proxy to route traffic based on subdomains to different applications running on different local ports.</p>
+            
+            <div class="mermaid">
+            flowchart TD
+                A[Internet] --> B[Nginx Reverse Proxy]
+                B --> C[app1.example.com]
+                B --> D[app2.example.com]
+                B --> E[api.example.com]
+                B --> F[blog.example.com]
+            </div>
+            <hr>
+
+            <h2>Step 9: Containerize Everything with Docker</h2>
+            <p>As an SRE, I hate installing dependencies directly on the host OS. Docker makes deployment, updates, and backups infinitely easier.</p>
+            
+            <div class="mermaid">
+            flowchart LR
+                A[Docker Engine] --> B[Website]
+                A --> C[API]
+                A --> D[Grafana]
+                A --> E[Prometheus]
+                A --> F[(PostgreSQL)]
+                A --> G[(Redis)]
+            </div>
+            
+            <p>Adopt a clean folder structure for your persistent volumes, such as <code>/srv/docker/</code>.</p>
+            <hr>
+
+            <h2>Step 10: Security, Monitoring, and Backups</h2>
+            <p>Running a server means you are responsible for keeping it alive and secure.</p>
+            <ul>
+                <li><strong>Security:</strong> Disable root SSH login, switch to SSH key authentication entirely, and install <code>fail2ban</code> to block brute-force attempts. Enable automatic security updates.</li>
+                <li><strong>Monitoring:</strong> Since observability is my bread and butter, I highly recommend spinning up a stack with Prometheus, Grafana, Node Exporter, and Loki. Monitor your CPU, memory, disk I/O, and SSL certificate expiry.</li>
+                <li><strong>Backups:</strong> Never rely entirely on an old laptop's hard drive. Automate backups (e.g., using cron jobs or Restic) to a NAS, external HDD, or cloud storage like AWS S3 or Backblaze B2.</li>
+            </ul>
+            <hr>
+
+            <h2>The CGNAT Hurdle</h2>
+            <p>If you've done everything right and it still doesn't work, you might be behind Carrier-Grade NAT (CGNAT). Many modern ISPs use CGNAT, meaning your router doesn't actually have a true public IP address, making port forwarding impossible.</p>
+            <p>If you are stuck behind CGNAT, you have modern alternatives:</p>
+            <ul>
+                <li><strong>Cloudflare Tunnels:</strong> A secure, outbound-only tunnel that exposes your local apps to the internet without opening inbound ports on your router.</li>
+                <li><strong>VPS VPN:</strong> Rent a $5/month VPS and establish a Tailscale or WireGuard tunnel between your laptop and the VPS, then route internet traffic through the VPS.</li>
+            </ul>
+            <hr>
+
+            <h2>A Production-Ready Architecture</h2>
+            <p>Putting it all together, here is what a robust, modern homelab architecture looks like when powered by an old laptop.</p>
+            
+            <div class="mermaid">
+            flowchart TD
+                A[Internet] --> B[Domain Name]
+                B --> C[Cloudflare DNS]
+                C --> D[ISP Public IP / Tunnel]
+                D --> E[Home Router <br> Port 80 / 443]
+                E --> F[Ubuntu Server Laptop <br> Docker + Docker Compose]
+                F --> G[Nginx / Caddy]
+                F --> H[Grafana]
+                F --> I[Prometheus]
+                G --> J[Website A]
+                G --> K[Website B]
+                J -.-> L[(PostgreSQL)]
+                K -.-> L
+            </div>
+            
+            <p>Given my background in automation and observability, my personal recommendation is to combine <strong>Ubuntu Server + Docker Compose + Nginx + Cloudflare DNS</strong>. If your ISP is uncooperative, slap a Cloudflare Tunnel on it. This gives you a flexible, secure, and highly maintainable on-prem server—proving you don't need rack-mounted enterprise hardware to build something great.</p>
+
+        </div>
+    </article>
+
+    <footer>
+        <div class="container" style="display: flex; flex-direction: column; align-items: center; gap: 2rem;">
+            <a href="https://tally.so/r/5B50Kb" target="_blank" rel="noopener noreferrer" class="nav-contact-btn" style="width: 140px; height: 44px; font-size: 1rem;">
+                <span class="btn-text">Send a note</span>
+                <span class="btn-icon">
+                    <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg>
+                </span>
+            </a>
+            <div class="footer-socials">
+                <a href="https://github.com/shayansaha85" target="_blank" title="GitHub" aria-label="GitHub">
+                    <img src="../assets/github.png" alt="GitHub" width="28" height="28" style="border-radius: 4px;">
+                </a>
+                <a href="https://linkedin.com/in/shayansaha85" target="_blank" title="LinkedIn" aria-label="LinkedIn">
+                    <img src="../assets/linkedin.png" alt="LinkedIn" width="28" height="28" style="border-radius: 4px;">
+                </a>
+                <a href="https://x.com/shayansaha85" target="_blank" title="X" aria-label="X">
+                    <img src="../assets/x.png" alt="X" width="28" height="28" style="border-radius: 4px;">
+                </a>
+                <a href="https://reddit.com/user/shayansaha85" target="_blank" title="Reddit" aria-label="Reddit">
+                    <img src="../assets/reddit.png" alt="Reddit" width="28" height="28" style="border-radius: 4px;">
+                </a>
+                <a href="https://bsky.app/profile/shayandev.bsky.social" target="_blank" title="Bluesky" aria-label="Bluesky">
+                    <img src="../assets/bluesky.png" alt="Bluesky" width="28" height="28" style="border-radius: 4px;">
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+</html>
